@@ -6,7 +6,7 @@
 var messages = [], //array that hold the record of each string in chat
   lastUserMessage = "", //keeps track of the most recent input string from the user
   botMessage = "", //var keeps track of what the chatbot is going to say
-  botName = 'Chatbot', //name of the chatbot
+  botName = 'Autobot', //name of the chatbot
   talking = true; //when false the speach function doesn't work
 //
 //
@@ -24,13 +24,23 @@ function chatbotResponse() {
 
   if (lastUserMessage === 'hi' || lastUserMessage =='hello') {
     const hi = ['hi','howdy','hello']
-    botMessage = hi[Math.floor(Math.random()*(hi.length))];;
+    botMessage = hi[Math.floor(Math.random()*(hi.length))] + '\n\n What Can I do For you today? \n <button id="create" onclick="createFea()">Create a new feature file</button> <button id="execute">Execute a feature file</button>';;
   }
 
   if (lastUserMessage === 'name') {
     botMessage = 'My name is ' + botName;
   }
+  
+  if(lastUserMessage.includes("feature")) {
+	  botMessage = '<button>HEy there</button>';
+  }
 }
+
+function createFea() {
+	console.log('creating feature file');
+	var fs = require('fs');
+};
+
 //****************************************************************
 //****************************************************************
 //****************************************************************
