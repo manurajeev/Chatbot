@@ -1,18 +1,21 @@
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<script src="main.js"></script>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
 <!-- Currently BROKEN!
 Working prototype on meesrutten.me :) -->
 <main class="page__main">
     <div class="block--background">
       <div class="chatbot__overview">
         <ul class="chatlist">
-          <li class="bot__output bot__output--standard">Hey, I'm Autobot!</li>
+          <li class="bot__output bot__output--standard" id="first_output"></li>
           <li class="bot__output bot__output--standard">I will guide you through the things I can do for you today</li>
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
             <ul>
-              <li class="input__nested-list"><button id="create"> Create a new feature file </button></li>
-              <li class="input__nested-list"><button id="execute"> Execute a feature file </button></li>
+              <li class="input__nested-list"><form id="create_btn" method="get" action="/create"><button id="create" class="btn" onclick="createFeature()"> Create a new feature file </button></form></li>
+              <li class="input__nested-list"><button id="execute" class="btn"> Execute a feature file </button></li>
   
             </ul>
             You could also type what you want to do see other options
@@ -28,3 +31,7 @@ Working prototype on meesrutten.me :) -->
 			    <div class="block--background"></div>
 
 </main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

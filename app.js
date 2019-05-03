@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express();
 
- app.use(express.static(__dirname));
+ console.log(__dirname+'/Chatbot_new');
+ app.use(express.static(__dirname+'/Chatbot new'));
 // // app.get('/', (req, res) => {
 // //   res.sendFile(__dirname + '/main.html');
   
@@ -30,14 +31,15 @@ const app = express();
 //   server.use(express.static(__dirname));
 // });
 
-app.listen(4000, () => {
-    console.log('App listening on port 4000')
+app.listen(8080, () => {
+    console.log('App listening on port 8080');
+    console.log(__dirname);
 });
 
-app.post('/', function(req, res) {
+app.get('/create', function(req, res) {
     console.log(req.body);
-    res.send(200);
-  
+    //res.send('Feature file done');
+    res.sendStatus(200);
     // sending a response does not pause the function
     foo();
   });

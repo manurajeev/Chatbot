@@ -15,6 +15,8 @@ var sendForm = document.querySelector('#chatform'),
     unkwnCommReaction = "I didn't quite get that.",
     chatbotButton = document.querySelector(".submit-button")
 
+    sendForm = document.getElementById('chatform');
+    console.log(sendForm);
 sendForm.onkeydown = function(e){
   if(e.keyCode == 13){
     e.preventDefault();
@@ -30,6 +32,7 @@ sendForm.onkeydown = function(e){
 };
 
 sendForm.addEventListener('submit', function(e) {
+  console.log('Suvmitted form');
   //so form doesnt submit page (no page refresh)
   e.preventDefault();
 
@@ -209,10 +212,25 @@ function commandReset(e){
   previousInput = Object.keys(possibleInput)[e];
 }
 
-// hlep
+// Starting message
+window.onload = function(){
+var d = new Date();
+var time = d.getHours();
+var salutation = "";
+if (time < 12) {
+  salutation = "Good Morning";
+}
+if (time >= 12 && time < 16) {
+  salutation = "Good Afternoon";
+}
+if (time >= 16) {
+  salutation = "Good Evening";
+}
+  console.log(salutation);
+  document.getElementById('first_output').innerHTML = 'Hey, '+salutation+ ', I\'m Autobot!';
+};
 
 var possibleInput = {
-  // "hlep" : this.help(),
   "help" : function(){
     responseText("You can type a command in the chatbox")
     responseText("Something like &quot;Navvy, please show me Mees&rsquo; best work&quot;")
@@ -229,30 +247,13 @@ var possibleInput = {
     return
     },
   "about" : function(){
-    responseText("This is me, Navvy's maker, Mees Rutten");
-    responseText("I'm a 22 year old Communication and Multimedia Design student");
-    responseText("My ambition is to become a great Creative Front-End Developer");
-    responseText("Would you like to know about Mees' vision? (Yes/No)");
-    commandReset(2);
+    responseText("This is me, Autobot");
+    responseText("I'm here to help you with yout Automation needs");
+    responseText("These are the operations I can perform right now");
+    responseText("<ul><li class='input__nested-list'><button id='create' class='btn'> Create a new feature file </button></li><li class='input__nested-list'><button id='execute' class='btn'> Execute a feature file </button></li> </ul>");
+    commandReset(1);
     return
     },
-  "experience" : function(){
-    responseText("Mees has previously worked at:");
-    responseText("Cobra Systems as web- developer / designer");
-    responseText("BIT Students as web- developer / designer");
-    responseText("MediaMonks as a junior Front-end Developer");
-    commandReset(3);
-    return
-  },
-  "hobbies" : function(){
-    responseText("Mees loves:");
-    responseText("Coding complicated chatbots");
-    responseText("Family time");
-    responseText("Going out with friends");
-    responseText("Working out");
-    commandReset(4);
-    return
-  },
   "interests" : function(){
     responseText("Mees loves:");
     responseText("Coding complicated chatbots");
@@ -306,4 +307,9 @@ var reactionInput = {
     animationCounter = 1;
     return
     }
+}
+
+//Creating a new feature file
+function createFeature() {
+  responseText("Feature File Created Successfully!!");
 }
