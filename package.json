@@ -1,0 +1,22 @@
+{
+  "name": "autobot",
+  "version": "1.0.0",
+  "description": "program for automation purposes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manurajeev/Chatbot.git"
+  },
+  "author": "Manu Rajeev Karri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manurajeev/Chatbot/issues"
+  },
+  "homepage": "https://github.com/manurajeev/Chatbot#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

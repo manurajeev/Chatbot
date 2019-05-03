@@ -24,7 +24,7 @@ function chatbotResponse() {
 
   if (lastUserMessage === 'hi' || lastUserMessage =='hello') {
     const hi = ['hi','howdy','hello']
-    botMessage = hi[Math.floor(Math.random()*(hi.length))] + '\n\n What Can I do For you today? \n <button id="create" onclick="createFea()">Create a new feature file</button> <button id="execute">Execute a feature file</button>';;
+    botMessage = hi[Math.floor(Math.random()*(hi.length))] + '\n\n What Can I do For you today? \n <form method="post" action="/"><input type="submit" id="create" onclick="createFea()" value="Create a new feature file"></form> <button id="execute">Execute a feature file</button>';;
   }
 
   if (lastUserMessage === 'name') {
@@ -38,7 +38,7 @@ function chatbotResponse() {
 
 function createFea() {
 	console.log('creating feature file');
-	var fs = require('fs');
+	
 };
 
 //****************************************************************
