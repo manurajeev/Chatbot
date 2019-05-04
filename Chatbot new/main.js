@@ -251,7 +251,7 @@ var possibleInput = {
     responseText("This is me, Autobot");
     responseText("I'm here to help you with yout Automation needs");
     responseText("These are the operations I can perform right now");
-    responseText("<ul><li class='input__nested-list'><button id='create' class='btn'> Create a new feature file </button></li><li class='input__nested-list'><button id='execute' class='btn'> Execute a feature file </button></li> </ul>");
+    responseText("<ul><li class='input__nested-list'><button id='create' class='btn' onclick=\"createFeature()\"> Create a new feature file </button></li><li class='input__nested-list'><button id='execute' class='btn' onclick=\"executeFeature()\"> Execute a feature file </button></li> </ul>");
     commandReset(1);
     return
     },
