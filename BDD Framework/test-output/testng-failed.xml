@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Testng Cucumber Suite]" parallel="none">
+  <test name="Run All Tests(failed)" parallel="none">
+    <classes>
+      <class name="com.webapp.executioner.ExecutionerClass">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="setUp"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="quit"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.webapp.executioner.ExecutionerClass -->
+    </classes>
+  </test> <!-- Run All Tests(failed) -->
+</suite> <!-- Failed suite [Testng Cucumber Suite] -->

@@ -1,0 +1,18 @@
+{
+	"Common_Data": 
+	{
+		"success_msg":"WELCOME :)",
+		"failure_msg":"ACCESS DENIED!"
+	},
+
+	"TC-001": 
+	{
+		"username":"admin",
+		"password": "12345"
+	},
+	"TC-002": 
+	{
+		"username":"admin",
+		"password": "12345"
+	}
+}

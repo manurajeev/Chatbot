@@ -1,0 +1,40 @@
+projectVal : Proj Name
+User : 
+releaseName : 
+Selected Env : QA
+
+
+TC Count : 2
+1
+1
+Feature file updated successfully
+[TestNG] Running:
+  C:\Manu\MOSS Frameworks\BDD Framework\testng.xml
+
+Selected Env is : QA and wait time is: 110
+==================================== Execution completed for TC :  ===================
+Elapsed Time in addDynamicContents1.55549997E12
+
+
+[31mFailed scenarios:[0m
+[31msample_Updated.feature:9 [0m# Scenario: To Verify whether E-Hub field is displaying in details tab
+
+1 Scenarios ([31m1 failed[0m)
+5 Steps ([31m1 failed[0m, [36m2 skipped[0m, [32m2 passed[0m)
+0m12.331s
+
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at com.webapp.utilities.EncryptFileData.decrypt(EncryptFileData.java:81)
+	at com.webapp.baseLibrary.FunctionsLibrary.loginApplication(FunctionsLibrary.java:3515)
+	at com.webapp.stepDefinition.CommonStepDefinitions.loginToApplication(CommonStepDefinitions.java:100)
+	at ✽.Given User Enter username and password and LogIn to application(sample_Updated.feature:7)
+
+No features found at [classpath:com/webapp/executioner]
+
+0 Scenarios
+0 Steps
+0m0.000s
+
+Total hours in summary close 0
+Total minutes in summary close 0
+Total seconds in summary close 0

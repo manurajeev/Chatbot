@@ -14,9 +14,9 @@ var sendForm = document.querySelector('#chatform'),
     isReaction = false,
     unkwnCommReaction = "I didn't quite get that.",
     chatbotButton = document.querySelector(".submit-button")
-
-    sendForm = document.getElementById('chatform');
-    console.log(sendForm);
+    var features = [];
+    
+   
 sendForm.onkeydown = function(e){
   if(e.keyCode == 13){
     e.preventDefault();
@@ -210,6 +210,7 @@ function animateBotOutput() {
 function commandReset(e){
   animationCounter = 1;
   previousInput = Object.keys(possibleInput)[e];
+  console.log(previousInput);
 }
 
 // Starting message
@@ -254,35 +255,32 @@ var possibleInput = {
     commandReset(1);
     return
     },
-  "interests" : function(){
-    responseText("Mees loves:");
-    responseText("Coding complicated chatbots");
-    responseText("Family time");
-    responseText("Going out with friends");
-    responseText("Working out");
+  "Creating Feature File" : function(){
+    responseText("Feature File Created Successfully!!");
+    responseText("Below are the test case Scenarios I can create <br><button id='scenarios_validlogin' class='btn' onclick='createValidScenario()'>Valid Login Test Case </button> <button id='scenarios_invalidlogin' class='btn' onclick='createInvalidScenario()'>Invalid Login Test Case </button>");
+    commandReset(2);
+    return
+  }, 
+  "Adding Invalid Scenario" : function(){
+    responseText("Test Case with Invalid scenario Created Successfully!!");
+    responseText("Do you want to execute this?");
+    commandReset(4);
+    return
+  },
+  "Adding Valid Scenario" : function(){
+    responseText("Test Case with Valid scenario Created Successfully!!");
+    responseText("Do you want to execute this?");
     commandReset(5);
     return
   },
-  "vision" : function(){
-    responseText("Things I want to learn or do:");
-    responseText("Get great at CSS & JS animation");
-    responseText("Create 3D browser experiences");
-    responseText("Learn Three.js and WebGL");
-    responseText("Combine Motion Design with Front-End");
-    commandReset(6);
-    return
+  "Showing feature files" : function(){
+    responseText("Which feature file do you want to execute? <br> <button class='btn' onclick=\"executeFeatureFile('"+features[0]+"')\">"+features[0]+"</button> <button class='btn' onclick=\"executeFeatureFile('"+features[1]+"')\">"+features[1]+"</button>");
   },
-  "contact" : function(){
-    responseText("email: <a href='mailto:meesrutten@gmail.com?Subject=Hello%20Mees' target='_top'>send me a message</a>");
-    responseText("Twitter: <a href='https://twitter.com/meesrttn'>@MeesRttn</a>");
-    commandReset(7);
-    return
+  "Executing sample.feature" : function(){
+    socket.emit('executeFeature', 'Sample.feature');
   },
-  "commands" : function(){
-    responseText("This is a list of commands Navvy knows:")
-    responseText("help, best work, about, vision, experience, hobbies / interests, contact, rick roll");
-    commandReset(8);
-    return
+  "Executing new.feature" : function(){
+    socket.emit('executeFeature', 'new.feature');
   },
   "rick roll" : function(){
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -306,10 +304,49 @@ var reactionInput = {
     responseText("Combine Motion Design with Front-End");
     animationCounter = 1;
     return
-    }
+    },
+    "Adding Valid Scenario": function(){
+      responseText("Executing the feature file");
+      socket.emit('execute', 'Sent an event(Execute) from the client!');
+      animationCounter = 1;
+      return
+    },
+    "Adding Invalid Scenario" : function(){
+      responseText("Executing the feature file");
+      socket.emit('execute', 'Sent an event(Execute) from the client!');
+      animationCounter = 1;
+      return
+    },
 }
 
 //Creating a new feature file
 function createFeature() {
-  responseText("Feature File Created Successfully!!");
+  socket.emit('message', 'Sent an event from the client!');
+  createBubble("Creating Feature File");
+}
+
+//Executing feature file
+function executeFeature() {
+  
+  socket.emit('execute', 'Sent an event(execute) from the client!');
+  socket.on('featureNames', function(data) {
+    console.log(data);
+    features = data.split(",");
+    console.log("Executed client feature file");
+    createBubble("Showing feature files");
+ });
+}
+
+function executeFeatureFile(featureName) {
+  createBubble("Executing "+featureName);
+}
+
+function createInvalidScenario() {
+  socket.emit('invalidLogin', '\nScenario: To Verify valid login test case\n  Given User executes test case \'TC-002\' for \'Invalid login scenario\'\n  Given User provides the url\n  And User Logs in to the webpage with username and password\n  Then Verify Invalid user login');
+  createBubble("Adding Invalid Scenario");
+}
+
+function createValidScenario() {
+  socket.emit('validLogin', '\nScenario: To Verify valid login test case\n  Given User executes test case \'TC-001\' for \'Valid login scenario\'\n  Given User provides the url\n  And User Logs in to the webpage with username and password\n  Then Verify Valid user login');
+  createBubble("Adding Valid Scenario");
 }

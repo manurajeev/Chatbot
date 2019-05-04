@@ -1,0 +1,116 @@
+projectVal : MOSS 	CA
+User : 
+releaseName : 
+Selected Env : UAT
+Test Cycle  : 
+sharmahi
+
+TC Count : 174
+TC-38575
+1
+Feature file updated successfully
+[TestNG] Running:
+  C:\Manu\MOSS Frameworks\MOSS_CA_BDD\testng.xml
+
+Selected Env is : UAT and wait time is: 120
+Decrypted password : chac7raV
+==================================== Execution started for TC : TC-38575 ===================
+{Disc_Value_CVISAConsumer=0.02, Account=12345678, NumOfLocations=2, Transit_Value=11111, FIID_Value=0006, BusinessType_Value=Sole Proprietor, AddressesProv=AB, OwnerCountry_Value=Canada, BankingInfo_SameAsDepositAcc_ChargebackUS=Select, Fees_Quantity=1, AddressesCity=Alberta, DoesMerchMaintainInventoryOfProd=No, AvgTkt_Value=1, Spl_Characters=+)(^%, Spokenlang_Value=English, MerchantSiteVisited=No, ChainName=CName, Fees_Rate=10, MCC_Value=0742, CBRetrieval_Value=Mail, MerchEligibleAMEXOptBlue=No, Sec_Merchant_Id=, BankingInfo_SameAsDepositAcc=Yes, BankingInfo_CAD=Select, Textbox_DBAName=Test, JobTitle=QA, Merchant_Id=0000055299545704, Checkbox_Select=check, ProcessRecurringTransactions=No, Alphabets=Alphabets Entered in the text field, AddressesPostalCode=A1A1A1, MCPIFDic_Defaultrate=0.2500 %, MerchAcceptedAMEX=No, TicketPrice=1000, ReferralSource_Value=HSBC Branch, Textbox_SalesRepID=9991, OwnerLastName=QA, Blank_Value=, SpecialProjectId=, SiteSurveyEID=No, FrontEndVendorSplSetup_Value=GP-North Host 5704 (Region 04), ConfIndicator_Value=Existing Member - To be confirmed, OwnerAllowCredit=Yes, RadioButton_select=select, ContactName=AutomationQA, CardsPresent_Value=100, MCPIFMinText=MC PIF MIN:, CopyFromPreviousApplication=No, OwnerAddress1=QA, Email=aa@test.com, Previous_OrderRefNo_QA=CQ17257154850, DoesMerchProcessFutureDeliveryOfProd=No, RadioButton_deSelect=deSelect, ShortName=SName, PromotionalOffer=None, Disc_Value=0.01, Template=CAD APPLICATION, MCPAFText=MC PAF:, ReferralSourceDetail_Value=HSBC ASSOCIATION MERCHANTS, Notes_Text=Automation Testing, LegalName=LName, Link_ProdServ=Products & Services, Textbox_StoreNumber=1234, Verify_Success_Message=Application submitted successfully., BusinessStartDate=09/01/2013, OwnerPhone=0123456789, RadioButton_rb_DefaultTemplates2_Name=select, AddressesCountry=Canada, PerItem_Value=0, CopyFromTemplate=No, FrontEndVendor_Value=GP-North Host (Base 24), WillMerchantOptAMEXMarketing=No, Verify_Error_Message2=2.02.09: Valid MCPIF Per Item is required for MasterCard Consumer(CAD), Verify_Error_Message=2.02.09: Valid MCPIF Discount Rate is required for MasterCard Consumer(CAD), Checkbox_Deselect=uncheck, TypeOfOrder=, Writtenlang_Value=English, ProcessOccasionalLargeTransactions=Yes, MCPIFPerItem_Defaultrate=$0.0000, IDF_Value=A1, OwnershipStartDate=09/16/2013, Listbox_salesChannel=Global Direct, OwnerProv_Value=AB, Phone=0123456789, BankingInfo_SameAsDepositAcc_ChargebackCA=Select, MerchantNumber=123456, Volume_Value=1, PosRebate_Duration=1, AddressesAddress1=QA, AccountNumber2=43169284, OwnerCity=Alberta, MCPIFText=MC PIF:, AccountNumber1=23569874, OwnerPostalCode=A1A1A1, WhatMerchantWillAMEXAccept=NA, OwnerFirstName=QA, BankingInfo_USD=deSelect}
+==================================== Execution completed for TC : TC-38575 ===================
+Elapsed Time in addDynamicContents1.55481473E12
+
+
+[31mFailed scenarios:[0m
+[31mMCAuthFee_Updated.feature:31 [0m# Scenario Outline: Verify Add location Global Master Card Fee newly added field MC PIF Disc and Per Item fields validation
+
+1 Scenarios ([31m1 failed[0m)
+18 Steps ([31m1 failed[0m, [36m14 skipped[0m, [32m3 passed[0m)
+0m19.020s
+
+java.lang.NullPointerException
+	at com.webapp.baseLibrary.FunctionsLibrary.parse(FunctionsLibrary.java:3475)
+	at com.webapp.stepDefinition.CommonStepDefinitions.getTestCasesIdsScenarioNameAndModules(CommonStepDefinitions.java:478)
+	at ✽.Given User executes testcases Id "TC-38575" for testcases name 'New Chain Master Card Fee newly added field MC PIF Disc and Per Item fields validation' and module 'TestCases->Subject->MOSS Canada->MOSS QA CA->2017->MOSS CA_CY18.02->MC Auth Card Fee->New Chain'(MCAuthFee_Updated.feature:10)
+
+java.lang.NullPointerException
+	at com.webapp.stepDefinition.CommonStepDefinitions.detailsForqTest(CommonStepDefinitions.java:249)
+	at com.webapp.stepDefinition.CommonStepDefinitions.afterHook(CommonStepDefinitions.java:211)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:223)
+	at cucumber.runtime.Runtime.runHooks(Runtime.java:211)
+	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:205)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)
+	at cucumber.runtime.model.CucumberScenarioOutline.run(CucumberScenarioOutline.java:46)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
+	at cucumber.runtime.Runtime.run(Runtime.java:121)
+	at com.webapp.executioner.ExecutionerClass.cucumberOption(ExecutionerClass.java:89)
+	at com.webapp.executioner.ExecutionerClass.setUp(ExecutionerClass.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:298)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at com.webapp.utilities.ActionListeners$ExecutionerListener.actionPerformed(ActionListeners.java:401)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+No features found at [classpath:com/webapp/executioner]
+
+0 Scenarios
+0 Steps
+0m0.000s
+
+Total hours in summary close 0
+Total minutes in summary close 0
+Total seconds in summary close 0

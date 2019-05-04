@@ -14,8 +14,9 @@ Working prototype on meesrutten.me :) -->
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
             <ul>
-              <li class="input__nested-list"><form id="create_btn" method="get" action="/create"><button id="create" class="btn" onclick="createFeature()"> Create a new feature file </button></form></li>
-              <li class="input__nested-list"><button id="execute" class="btn"> Execute a feature file </button></li>
+              <!-- <li class="input__nested-list"><form id="create_btn" method="get" action="/create"><button id="create" class="btn" onclick="createFeature()"> Create a new feature file </button></form></li> -->
+              <li class="input__nested-list"><button id="create" class="btn" onclick="createFeature()"> Create a new feature file </button></li>
+              <li class="input__nested-list"><button id="execute" class="btn" onclick="executeFeature()"> Execute a feature file </button></li>
   
             </ul>
             You could also type what you want to do see other options
@@ -32,6 +33,9 @@ Working prototype on meesrutten.me :) -->
 
 </main>
 <script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+</script>
 <script src="main.js"></script>
 </body>
 </html>

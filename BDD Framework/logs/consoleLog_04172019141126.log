@@ -1,0 +1,25 @@
+projectVal : MOSS 	CA
+User : 
+releaseName : 
+Selected Env : QA
+Test Cycle  : 
+sharmahi
+
+TC Count : 27
+projectVal : MOSS 	CA
+User : 
+releaseName : 
+Selected Env : QA
+Test Cycle  : 
+sharmahi
+
+Change the header er executes testcases Id "<TC_Mul_GSAP39
+Change the header er executes testcases Id "<TC_Mul_WBEnhancement_42
+Duplicate Test Cases found : [TC-46665, TC-46682, TC-46681]
+TC Count : 2082
+TC-10281
+1
+Feature file updated successfully
+[TestNG] Running:
+  C:\Manu\MOSS Frameworks\MOSS_CA_BDD\testng.xml
+
